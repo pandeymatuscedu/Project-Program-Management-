@@ -1,0 +1,62 @@
+/* Extra styles for the project-document layout. Loaded after style.css */
+.doc-meta { width: 100%; border-collapse: collapse; margin-top: 36px; font-size: 15px; }
+.doc-meta th, .doc-meta td { text-align: left; padding: 10px 14px; border: 1px solid var(--line); vertical-align: top; }
+.doc-meta th { width: 170px; background: var(--card); color: var(--muted); font-weight: 600; }
+
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; border: 1px solid var(--line); }
+.badge.green { color: #1a7f37; border-color: #1a7f37; }
+.badge.amber { color: #b26a00; border-color: #b26a00; }
+.badge.blue { color: #0b62c4; border-color: #0b62c4; }
+@media (prefers-color-scheme: dark) {
+  .badge.green { color: #56d364; border-color: #56d364; }
+  .badge.amber { color: #e3b341; border-color: #e3b341; }
+  .badge.blue { color: #79b8ff; border-color: #79b8ff; }
+}
+
+.sec-num { color: var(--accent); font-family: "Times New Roman", Times, serif; margin-right: 10px; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+.box { border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 20px; }
+.box h3 { font-size: 19px; margin-bottom: 10px; }
+.box ul { margin: 0; padding-left: 18px; }
+.box li { margin-bottom: 6px; font-size: 16px; }
+
+/* Gantt */
+.gantt { border: 1px solid var(--line); border-radius: 8px; background: var(--card); padding: 18px 18px 10px; overflow-x: auto; }
+.g-inner { min-width: 720px; position: relative; }
+.g-years { position: relative; height: 26px; border-bottom: 1px solid var(--line); margin-left: 190px; }
+.g-years span { position: absolute; top: 0; font-size: 13px; color: var(--muted); padding-left: 6px; border-left: 1px solid var(--line); height: 26px; line-height: 26px; }
+.g-row { display: grid; grid-template-columns: 190px 1fr; align-items: center; min-height: 40px; border-bottom: 1px dashed var(--line); }
+.g-row:last-child { border-bottom: none; }
+.g-label { font-size: 14px; padding-right: 10px; }
+.g-label small { display: block; color: var(--muted); font-size: 12px; }
+.g-track { position: relative; height: 40px; }
+.g-bar { position: absolute; top: 9px; height: 22px; border-radius: 4px; background: var(--accent); opacity: .9; }
+.g-bar.alt { background: #6b7280; }
+.g-bar.live { background: repeating-linear-gradient(45deg, var(--accent), var(--accent) 8px, transparent 8px, transparent 12px); border: 1px solid var(--accent); }
+.g-today { position: absolute; top: 0; bottom: 0; width: 0; border-left: 2px dashed var(--accent); z-index: 2; }
+.g-today-label { position: absolute; top: -2px; font-size: 11px; color: var(--accent); font-weight: 700; transform: translateX(-50%); background: var(--card); padding: 0 4px; }
+.g-ms { position: absolute; top: 12px; width: 14px; height: 14px; background: var(--text); transform: translateX(-50%) rotate(45deg); border-radius: 2px; }
+.g-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+/* Deliverable cards */
+.deliv { border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 22px; margin-bottom: 16px; }
+.deliv .head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; margin-bottom: 4px; }
+.deliv h3 { font-size: 22px; }
+.deliv .sub { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+.deliv dl { display: grid; grid-template-columns: 110px 1fr; gap: 6px 16px; margin: 0; font-size: 16px; }
+.deliv dt { color: var(--muted); font-weight: 600; font-size: 14px; padding-top: 2px; }
+.deliv dd { margin: 0; }
+@media (max-width: 560px) { .deliv dl { grid-template-columns: 1fr; gap: 0; } .deliv dd { margin-bottom: 10px; } }
+
+/* Table */
+.tbl { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tbl th, .tbl td { text-align: left; padding: 12px 14px; border: 1px solid var(--line); vertical-align: top; }
+.tbl th { background: var(--card); color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .05em; }
+.tbl-wrap { overflow-x: auto; }
+
+.status-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+
+.deliv .links { margin-top: 14px; font-size: 15px; }
+.deliv .links a { font-weight: 600; margin-right: 18px; }
